@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+
+                {% for object in object_list %}
+                    <li><a href="#">{{ object.name }}</a></li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Dashboard</h1>
+
+            <div class="row placeholders">
+
+                <!-- Main jumbotron for a primary marketing message or call to action -->
+                <div class="jumbotron">
+                    <h1>Hello, world!</h1>
+                    <p>This is a template for a simple marketing or informational website. It includes a large callout
+                        called a jumbotron and three supporting pieces of content. Use it as a starting point to create
+                        something more unique.</p>
+                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+                </div>
+
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                         width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                         width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                         width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                         width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <p>&copy; 2016 Company, Inc.</p>
+            </footer>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
