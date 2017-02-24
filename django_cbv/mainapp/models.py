@@ -6,3 +6,6 @@ from django.db import models
 class Profile(models.Model):
     name = models.CharField(max_length=30,default="Your name")
     job = models.CharField(max_length=30, default="your Job")
+
+    def __str__(self):
+        return self.name
