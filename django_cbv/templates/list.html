@@ -10,7 +10,7 @@
             <ul class="nav nav-sidebar">
 
                 {% for object in object_list %}
-                    <li><a href="#">{{ object.name }} </a></li>
+                    <li><a href="{% url "mainapp:detail" object.id %}">{{ object.name }} </a></li>
                 {% endfor %}
 
             </ul>
