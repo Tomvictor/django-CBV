@@ -3,7 +3,7 @@ from mainapp.models import Profile
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 
 
 # Create your views here.
@@ -24,6 +24,11 @@ class profile_detail_view(DetailView):
     template_name = "detail.html"
 
 class profile_create_view(CreateView):
+    model = Profile
+    fields = ['name']
+    template_name = 'profile_form.html'
+
+class ProfileUpdate(UpdateView):
     model = Profile
     fields = ['name']
     template_name = 'profile_form.html'
