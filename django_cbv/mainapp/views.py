@@ -26,3 +26,4 @@ class profile_detail_view(DetailView):
 class profile_create_view(CreateView):
     model = Profile
     fields = ['name']
+    template_name = 'profile_form.html'
