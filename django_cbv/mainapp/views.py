@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from mainapp.models import Profile
+# for login required
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -7,6 +11,13 @@ from django.views.generic.edit import CreateView, UpdateView
 
 
 # Create your views here.
+
+class LoginRequiredMixin(object):
+    
+	@method_decorator(login_required)
+	def dispatch(self, request, *args, **kwargs):
+		return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+
 
 class home_page(TemplateView):
     template_name = "home.html"
@@ -28,7 +39,8 @@ class profile_create_view(CreateView):
     fields = ['name']
     template_name = 'profile_form.html'
 
-class ProfileUpdate(UpdateView):
+
+class ProfileUpdate(LoginRequiredMixin,UpdateView):
     model = Profile
     fields = ['name']
     template_name = 'profile_form.html'
